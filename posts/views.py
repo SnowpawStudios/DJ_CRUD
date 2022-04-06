@@ -16,7 +16,7 @@ def create_post(request):
     form = PostForm()
 
     if request.method =='POST':
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('home')
@@ -34,7 +34,7 @@ def update_post(request, pk):
     form = PostForm(instance=post)
 
     if request.method =='POST':
-        form = PostForm(request.POST, instance=post)
+        form = PostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
             form.save()
             return redirect('home')
