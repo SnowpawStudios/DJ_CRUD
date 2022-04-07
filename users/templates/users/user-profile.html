@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{{profile.name}}
+
+<p>My posts</p>
+    
+    {% for post in profile.post_set.all  %}
+    <a href="{% url 'detail-post' post.id %}">
+        <div style="padding:20px; border: solid 1px; ">
+        <p>{{post.title}}</p>
+
+        </div>
+
+    </a>
+    
+    
+    {% endfor %}
+    
+
+{% endblock content %}

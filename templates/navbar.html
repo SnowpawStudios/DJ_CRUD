@@ -6,8 +6,14 @@
         <a href="{% url 'home' %}"><img style= "max-width: 50px;" src="{% static 'images/default.png' %}" alt=""></a>
         <ul>
             <li><a href="{% url 'home' %}">home</a></li>
-            <li><a href="{% url 'create' %}">create post</a></li>
+            
             <li><a href="{% url 'profiles' %}">profiles</a></li>
+            {% if request.user.is_authenticated %}
+                <li><a href="{% url 'account' %}">account</a></li>
+                <li><a href="{% url 'logout' %}">logout {{user.username}} </a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">login/signup</a></li>
+            {% endif %}
         </ul>
     </nav>
 </div>

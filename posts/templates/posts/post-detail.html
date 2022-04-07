@@ -2,6 +2,7 @@
 
 {% block content %}
 <h1>{{post.title}}</h1>
+<p>Written by: {{post.owner.name}}</p>
 <p>{{post.content}}</p>
 <img style="max-width: 500px;" src="{{post.featured_image.url}}" alt="">
 

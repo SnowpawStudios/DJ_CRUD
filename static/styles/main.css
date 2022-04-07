@@ -13,6 +13,10 @@ Body {
   flex-direction: column;
   
  }
+ .input {
+     padding: 0.5em;
+     margin: 0.3em;
+ }
 
  .nav-container{
    border-bottom: solid 1px #4B4B4B;
